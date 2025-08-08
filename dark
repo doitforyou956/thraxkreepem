@@ -1,0 +1,84 @@
+loadstring(game:HttpGet("https://pastefy.app/RJINtroL/raw"))()
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Screen</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ccc, #fff, #111);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3em;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .loading-container {
+      width: 80%;
+      max-width: 800px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loading-bar {
+      height: 100%;
+      width: 0%;
+      background: white;
+      color: #000;
+      text-align: center;
+      line-height: 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      transition: width 0.1s linear;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌴 Grow a Garden 🌴</h1>
+  <div class="loading-container">
+    <div class="loading-bar" id="loadingBar">discord.gg/darkscripts</div>
+  </div>
+
+  <script>
+    const loadingBar = document.getElementById('loadingBar');
+    let progress = 0;
+    const duration = 10000; // 10 seconds in ms
+    const intervalTime = 100; // update every 100ms
+    const increment = (100 / (duration / intervalTime));
+
+    const interval = setInterval(() => {
+      progress += increment;
+      if (progress >= 100) {
+        progress = 100;
+        clearInterval(interval);
+      }
+      loadingBar.style.width = progress + '%';
+    }, intervalTime);
+  </script>
+</body>
+</html>
